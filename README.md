@@ -61,6 +61,17 @@ event_id (Foreign Key)
 
 service_id (Foreign Key)
 
+#### Contact_Message:
+contact_message_id (Primary Key)
+
+name
+
+email
+
+message
+
+date_created
+
 #### Relationships:
 A venue can host multiple events.
 An event can have multiple bookings and services.
@@ -68,7 +79,7 @@ A customer can make multiple bookings.
 
 ## ERD Diagram
 
-<img width="840" alt="Screenshot 2025-03-13 at 9 31 01 PM" src="https://github.com/user-attachments/assets/ec7d7174-1c60-44d6-b3d1-0d95074e00e1" />
+<img width="823" alt="Screenshot 2025-03-24 at 2 18 07 PM" src="https://github.com/user-attachments/assets/3074232f-00b4-4091-96bb-6480788f74ef" />
 
 
 ## Technologies
