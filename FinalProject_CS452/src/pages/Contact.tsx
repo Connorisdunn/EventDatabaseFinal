@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabase';
 
+// Im just checking to see if git push is working
+
 export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
