@@ -13,20 +13,16 @@ export function VenueDetails() {
   const [loading, setLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [availableDates, setAvailableDates] = useState<Date[]>([]);
-
-  const getNextYearDates = useMemo(() => {
-    const dates: Date[] = [];
-    const startDate = new Date();
-    const endDate = new Date(startDate);
-    endDate.setFullYear(endDate.getFullYear() + 1);
-    
-    const currentDate = new Date(startDate);
-    while (currentDate <= endDate) {
-      dates.push(new Date(currentDate));
-      currentDate.setDate(currentDate.getDate() + 1);
-    }
-    return dates;
-  }, []);
+  
+  // Updated booking details state
+  const [bookingDetails, setBookingDetails] = useState({
+    email: '',
+    phone: '',
+    services: '',
+    additional_notes: '',
+  });
+  const [showBookingForm, setShowBookingForm] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     async function loadVenue() {
@@ -45,21 +41,35 @@ export function VenueDetails() {
 
         if (venueError) throw venueError;
 
+        // Fetch existing bookings for this venue
         const { data: bookings, error: bookingsError } = await supabase
           .from('bookings')
-          .select('date')
-          .eq('venue_id', id);
+          .select('booking_date')
+          .eq('venue_id', id)
+          .eq('status', 'confirmed'); // Only check confirmed bookings
 
         if (bookingsError) {
           console.error('Error fetching bookings:', bookingsError);
         }
 
         const bookedDates = new Set(
-          bookings?.map(b => new Date(b.date).toDateString()) || []
+          bookings?.map(b => new Date(b.booking_date).toDateString()) || []
         );
         
+        // Generate available dates
+        const dates: Date[] = [];
+        const startDate = new Date();
+        const endDate = new Date(startDate);
+        endDate.setFullYear(endDate.getFullYear() + 1);
+        
+        const currentDate = new Date(startDate);
+        while (currentDate <= endDate) {
+          dates.push(new Date(currentDate));
+          currentDate.setDate(currentDate.getDate() + 1);
+        }
+
         setAvailableDates(
-          getNextYearDates.filter(d => !bookedDates.has(d.toDateString()))
+          dates.filter(d => !bookedDates.has(d.toDateString()))
         );
         setVenue(venueData);
       } catch (error) {
@@ -71,23 +81,81 @@ export function VenueDetails() {
     }
 
     loadVenue();
-  }, [id, navigate, getNextYearDates]);
+  }, [id, navigate]);
 
-  const handleBooking = async () => {
+  const [services, setServices] = useState<any[]>([]);
+  useEffect(() => {
+    async function fetchServices() {
+      const { data, error } = await supabase.from('services').select('*');
+      if (data) setServices(data);
+      if (error) console.error('Error fetching services:', error);
+    }
+    fetchServices();
+  }, []);
+
+  const handleDateSelect = (date: Date) => {
+    setSelectedDate(date);
+    setShowBookingForm(true);
+  };
+
+  const handleBookingDetailsChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setBookingDetails(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFinalBooking = async (e: React.FormEvent) => {
+    e.preventDefault();
     if (!selectedDate || !venue) return;
 
+    setIsSubmitting(true);
+
     try {
-      const { error } = await supabase
+      // First, check if the date is still available
+      const { data: existingBooking, error: checkError } = await supabase
         .from('bookings')
-        .insert({ venue_id: venue.id, date: selectedDate.toISOString().split('T')[0] });
+        .select('id')
+        .eq('venue_id', venue.id)
+        .eq('booking_date', selectedDate.toISOString().split('T')[0])
+        .eq('status', 'confirmed')
+        .single();
 
-      if (error) throw error;
+      if (existingBooking) {
+        throw new Error('This date is no longer available. Please select another date.');
+      }
 
-      alert('Booking successful!');
+      // Insert booking
+      const { data: bookingData, error: bookingError } = await supabase
+        .from('bookings')
+        .insert({ 
+          venue_id: venue.id, 
+          booking_date: selectedDate.toISOString().split('T')[0],
+          customer_id: bookingDetails.email, // Using email as customer_id
+          email: bookingDetails.email,
+          phone: bookingDetails.phone,
+          services: bookingDetails.services,
+          additional_notes: bookingDetails.additional_notes,
+          status: 'pending' // Start with pending status
+        })
+        .select();
+
+      if (bookingError) throw bookingError;
+
+      alert('Booking submitted! We will review and confirm your booking soon.');
+      
+      // Reset states
       setSelectedDate(null);
+      setShowBookingForm(false);
+      setBookingDetails({
+        email: '',
+        phone: '',
+        services: '',
+        additional_notes: '',
+      });
     } catch (error) {
       console.error('Error booking venue:', error);
-      alert('Failed to book. Please try again.');
+      alert(error instanceof Error ? error.message : 'Failed to book. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -160,7 +228,7 @@ export function VenueDetails() {
           <div className="mt-6">
             <DatePicker
               selected={selectedDate}
-              onChange={(date: Date) => setSelectedDate(date)}
+              onChange={handleDateSelect}
               includeDates={availableDates}
               minDate={new Date()}
               maxDate={new Date(new Date().setFullYear(new Date().getFullYear() + 1))}
@@ -168,17 +236,68 @@ export function VenueDetails() {
             />
           </div>
           
-          <button 
-            onClick={handleBooking}
-            disabled={!selectedDate}
-            className={`mt-8 w-full px-6 py-3 rounded-md text-lg font-medium ${
-              selectedDate
-                ? 'bg-rose-500 text-white hover:bg-rose-600'
-                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-            } transition-colors`}
-          >
-            {selectedDate ? 'Book This Venue' : 'Select a Date to Book'}
-          </button>
+          {showBookingForm && (
+            <form onSubmit={handleFinalBooking} className="mt-8 space-y-4">
+              <h2 className="text-2xl font-bold mb-4">Booking for {venue.name} on {selectedDate?.toLocaleDateString()}</h2>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={bookingDetails.email}
+                  onChange={handleBookingDetailsChange}
+                  required
+                  className="mt-1 block w-full rounded-md border-gray-300"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={bookingDetails.phone}
+                  onChange={handleBookingDetailsChange}
+                  required
+                  className="mt-1 block w-full rounded-md border-gray-300"
+                />
+              </div>
+              <div>
+            <label className="block text-sm font-medium text-gray-700">Services</label>
+            <select
+              name="services"
+              value={bookingDetails.services}
+              onChange={handleBookingDetailsChange}
+              className="mt-1 block w-full rounded-md border-gray-300"
+            >
+              <option value="">Select Services (Optional)</option>
+              {services.map((service) => (
+                <option key={service.id} value={service.id}>
+                  {service.name}
+                </option>
+              ))}
+            </select>
+          </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Additional Notes</label>
+                <textarea
+                  name="additional_notes"
+                  value={bookingDetails.additional_notes}
+                  onChange={handleBookingDetailsChange}
+                  className="mt-1 block w-full rounded-md border-gray-300"
+                  placeholder="Any additional information you'd like to share"
+                />
+              </div>
+              <button 
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full bg-rose-500 text-white py-3 rounded-md hover:bg-rose-600 ${
+                  isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+              >
+                {isSubmitting ? 'Submitting...' : 'Submit Booking Request'}
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </div>
