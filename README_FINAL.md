@@ -2,7 +2,11 @@
 
 A modern, responsive web application for a wedding venue booking service that allows users to browse venues, check availability, request bookings, and contact venue administrators.
 
-![Eternal Moments](https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80)
+For the sake of keeping this Github Repo open to public, I changed the .env file to keep my anon key private, but will include screenshots of entire supabase and website to provide functionality without need of running code. 
+VITE_SUPABASE_ANON_KEY= {ENTER ANON KEY}
+VITE_SUPABASE_URL= {ENTER URL}
+
+<img width="1440" alt="Screenshot 2025-03-31 at 10 52 14 AM" src="https://github.com/user-attachments/assets/1186a04f-1bec-47e1-8b73-d57ca4f7f5ec" />
 
 ## Overview
 
