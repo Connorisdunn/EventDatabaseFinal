@@ -151,36 +151,36 @@ src/
 ## Screenshots
 
 #### Home Page
-<img width="720" alt="Screenshot 2025-03-31 at 11 15 07 AM" src="https://github.com/user-attachments/assets/7ea6012d-acb1-4e4c-918b-98d68051564e" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 15 07 AM" src="https://github.com/user-attachments/assets/7ea6012d-acb1-4e4c-918b-98d68051564e" />
 
 #### Footer
-<img width="720" alt="Screenshot 2025-03-31 at 11 15 40 AM" src="https://github.com/user-attachments/assets/36b8f8db-3aea-4fcd-a145-e2ec25eceba0" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 15 40 AM" src="https://github.com/user-attachments/assets/36b8f8db-3aea-4fcd-a145-e2ec25eceba0" />
 
 #### Venues Page
-<img width="720" alt="Screenshot 2025-03-31 at 11 15 56 AM" src="https://github.com/user-attachments/assets/48c4fa00-1915-495e-b504-8a647033fe61" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 15 56 AM" src="https://github.com/user-attachments/assets/48c4fa00-1915-495e-b504-8a647033fe61" />
 
 #### Venue View Details Page
-<img width="720" alt="Screenshot 2025-03-31 at 11 16 31 AM" src="https://github.com/user-attachments/assets/70e83297-5d44-4767-b7f6-99639b51d5d8" />
-<img width="720" alt="Screenshot 2025-03-31 at 11 17 40 AM" src="https://github.com/user-attachments/assets/f6dc5c03-86e3-43a7-ab4b-6c7bb741d9f9" />
-<img width="720" alt="Screenshot 2025-03-31 at 11 18 00 AM" src="https://github.com/user-attachments/assets/465a2441-dd90-4ddd-a48d-a7652ad258b3" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 16 31 AM" src="https://github.com/user-attachments/assets/70e83297-5d44-4767-b7f6-99639b51d5d8" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 17 40 AM" src="https://github.com/user-attachments/assets/f6dc5c03-86e3-43a7-ab4b-6c7bb741d9f9" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 18 00 AM" src="https://github.com/user-attachments/assets/465a2441-dd90-4ddd-a48d-a7652ad258b3" />
 
 #### Services Page
 <img width="500" alt="Screenshot 2025-03-31 at 11 18 26 AM" src="https://github.com/user-attachments/assets/abbd947a-57ca-4df8-8c2e-039a16767669" />
 <img width="500" alt="Screenshot 2025-03-31 at 11 18 40 AM" src="https://github.com/user-attachments/assets/f14cd810-85e3-482a-9564-b55f15668414" />
 
 #### Contact Us Page
-<img width="720" alt="Screenshot 2025-03-31 at 11 19 21 AM" src="https://github.com/user-attachments/assets/e44c0e1d-2844-429e-97f3-d0d85c96c062" />
-<img width="720" alt="Screenshot 2025-03-31 at 11 19 36 AM" src="https://github.com/user-attachments/assets/6d3fbdcd-b996-465d-b728-d81a4e2db2ea" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 19 21 AM" src="https://github.com/user-attachments/assets/e44c0e1d-2844-429e-97f3-d0d85c96c062" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 19 36 AM" src="https://github.com/user-attachments/assets/6d3fbdcd-b996-465d-b728-d81a4e2db2ea" />
 
 
 #### Supabase Database
-<img width="720" alt="Screenshot 2025-03-31 at 11 22 38 AM" src="https://github.com/user-attachments/assets/11436470-2ea7-4071-b266-06f397a0067c" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 22 38 AM" src="https://github.com/user-attachments/assets/11436470-2ea7-4071-b266-06f397a0067c" />
 
 #### Supabase Table Examples
-<img width="720" alt="Screenshot 2025-03-31 at 11 23 01 AM" src="https://github.com/user-attachments/assets/f9d6d587-43e5-4c63-b734-70428ad93e82" />
-<img width="720" alt="Screenshot 2025-03-31 at 11 23 26 AM" src="https://github.com/user-attachments/assets/b1c072ac-e0dd-45e0-9996-58b2e2314504" />
-<img width="720" alt="Screenshot 2025-03-31 at 11 23 48 AM" src="https://github.com/user-attachments/assets/c1180ae9-d2f9-4a8b-bafc-76ca12196e87" />
-<img width="720" alt="Screenshot 2025-03-31 at 11 24 25 AM" src="https://github.com/user-attachments/assets/8bfc9e2b-b346-4857-be60-144600cefcd5" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 23 01 AM" src="https://github.com/user-attachments/assets/f9d6d587-43e5-4c63-b734-70428ad93e82" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 23 26 AM" src="https://github.com/user-attachments/assets/b1c072ac-e0dd-45e0-9996-58b2e2314504" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 23 48 AM" src="https://github.com/user-attachments/assets/c1180ae9-d2f9-4a8b-bafc-76ca12196e87" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 24 25 AM" src="https://github.com/user-attachments/assets/8bfc9e2b-b346-4857-be60-144600cefcd5" />
 
 ## Contributor
 - Connor Dunn
