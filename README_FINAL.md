@@ -150,6 +150,32 @@ src/
 
 ## Screenshots
 
+### Home Page
+
+
+### Footer
+
+
+### Venues Page
+
+
+### Venue View Details Page Part I
+
+
+### Venue View Details Page Part II
+
+
+### Services Page
+
+
+### Contact Us Page
+
+
+### Supabase Database
+
+
+### Supabase Table Example
+
 
 
 ## Contributor
