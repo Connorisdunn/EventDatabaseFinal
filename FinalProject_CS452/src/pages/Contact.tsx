@@ -120,7 +120,7 @@ export function Contact() {
               <strong>Phone:</strong> (555) 123-4567
             </p>
             <p className="text-gray-600">
-              <strong>Address:</strong> 123 Wedding Lane, Celebration City, ST 12345
+              <strong>Address:</strong> 123 Wedding Lane, Celebration City, UT 12345
             </p>
           </div>
         </div>

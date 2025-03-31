@@ -30,7 +30,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-2 text-gray-400">
               <li>123 Wedding Lane</li>
-              <li>Celebration City, ST 12345</li>
+              <li>Celebration City, UT 12345</li>
               <li>Phone: (555) 123-4567</li>
               <li>Email: contact@eternalmoments.com</li>
             </ul>

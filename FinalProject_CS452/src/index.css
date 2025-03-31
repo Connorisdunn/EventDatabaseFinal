@@ -1,3 +1,195 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Smooth transition classes */
+/* Add this to your index.css file */
+
+/* Improve transition smoothness */
+.opacity-transition {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .bg-opacity-transition {
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .duration-600 {
+    transition-duration: 600ms;
+  }
+  
+  .duration-800 {
+    transition-duration: 800ms;
+  }
+  
+  /* Enhance carousel controls */
+  .carousel-controls {
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: all 300ms ease;
+  }
+  
+  .carousel-container:hover .carousel-controls {
+    opacity: 1;
+  }
+  
+  /* Improve indicator dots */
+  .indicator-dot {
+    @apply h-2.5 w-2.5 rounded-full transition-all duration-300;
+  }
+  
+  .indicator-dot.active {
+    @apply bg-white scale-110;
+  }
+  
+  .indicator-dot.inactive {
+    @apply bg-white bg-opacity-60 hover:bg-opacity-80;
+  }
+  
+  /* Add subtle image scaling during transition */
+  .image-zoom-effect {
+    transition: transform 8s ease-out;
+  }
+  
+  .image-zoom-effect.zooming {
+    transform: scale(1.05);
+  }
+  
+  /* Add fade-in animation on carousel load */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .carousel-fadeIn {
+    animation: fadeIn 1.5s ease;
+  }
+
+/* Improve dropdown styling */
+.react-datepicker__month-dropdown,
+.react-datepicker__year-dropdown {
+  background-color: white;
+  border: 1px solid #aeaeae;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+}
+
+.react-datepicker__month-dropdown-container,
+.react-datepicker__year-dropdown-container {
+  margin: 0 0.5rem;
+}
+
+.react-datepicker__month-read-view--selected-month,
+.react-datepicker__year-read-view--selected-year {
+  font-weight: bold;
+  color: #db2777; /* rose-600 */
+}
+
+.react-datepicker__month-option,
+.react-datepicker__year-option {
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.react-datepicker__month-option:hover,
+.react-datepicker__year-option:hover {
+  background-color: #f9e9ef; /* light rose */
+}
+
+.react-datepicker__month-option--selected,
+.react-datepicker__year-option--selected {
+  background-color: #fce7f3; /* rose-100 */
+  color: #db2777; /* rose-600 */
+}
+
+/* Enhance calendar day selected state */
+.react-datepicker__day--selected {
+  background-color: #db2777 !important; /* rose-600 */
+}
+
+.react-datepicker__day--selected:hover {
+  background-color: #be185d !important; /* rose-700 */
+}
+
+/* Make the calendar responsive */
+@media (max-width: 640px) {
+  .react-datepicker {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Add this to your src/index.css file */
+
+/* Carousel transitions */
+.carousel-image {
+    transition: opacity 500ms ease-in-out;
+  }
+  
+  /* Enhance button hover effects */
+  .carousel-nav-button {
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 300ms ease;
+  }
+  
+  .carousel-container:hover .carousel-nav-button {
+    opacity: 1;
+  }
+  
+  .carousel-nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  /* Indicator dot animations */
+  .carousel-indicator {
+    transition: transform 300ms ease, background-color 300ms ease;
+  }
+  
+  .carousel-indicator.active {
+    transform: scale(1.2);
+  }
+  
+  /* Fade-in effect when carousel first loads */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .carousel-container {
+    animation: fadeIn 700ms ease-in-out;
+  }
+  /* Add just these new classes to your existing CSS file */
+
+/* Additional duration for longer, smoother transitions */
+.duration-1000 {
+    transition-duration: 1000ms;
+  }
+  
+  /* Hardware acceleration for smoother transitions */
+  img {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    transform: translateZ(0) scale(1, 1);
+  }
+  
+  /* Prevent flickering during transitions */
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Smoother z-index transitions */
+  .z-10 {
+    z-index: 10;
+  }
+  
+  .z-0 {
+    z-index: 0;
+  }
