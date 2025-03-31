@@ -165,8 +165,8 @@ src/
 <img width="1440" alt="Screenshot 2025-03-31 at 11 18 00 AM" src="https://github.com/user-attachments/assets/465a2441-dd90-4ddd-a48d-a7652ad258b3" />
 
 #### Services Page
-<img width="1440" alt="Screenshot 2025-03-31 at 11 18 26 AM" src="https://github.com/user-attachments/assets/abbd947a-57ca-4df8-8c2e-039a16767669" />
-<img width="1440" alt="Screenshot 2025-03-31 at 11 18 40 AM" src="https://github.com/user-attachments/assets/f14cd810-85e3-482a-9564-b55f15668414" />
+<img width="720" alt="Screenshot 2025-03-31 at 11 18 26 AM" src="https://github.com/user-attachments/assets/abbd947a-57ca-4df8-8c2e-039a16767669" />
+<img width="720" alt="Screenshot 2025-03-31 at 11 18 40 AM" src="https://github.com/user-attachments/assets/f14cd810-85e3-482a-9564-b55f15668414" />
 
 #### Contact Us Page
 <img width="1440" alt="Screenshot 2025-03-31 at 11 19 21 AM" src="https://github.com/user-attachments/assets/e44c0e1d-2844-429e-97f3-d0d85c96c062" />
