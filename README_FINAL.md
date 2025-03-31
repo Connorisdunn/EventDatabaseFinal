@@ -1,0 +1,184 @@
+# Eternal Moments - Wedding Venue Booking Website
+
+A modern, responsive web application for a wedding venue booking service that allows users to browse venues, check availability, request bookings, and contact venue administrators.
+
+![Eternal Moments](https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80)
+
+## Overview
+
+Eternal Moments is a full-stack web application built with React, TypeScript, and Supabase. The application enables users to:
+
+- Browse available wedding venues
+- View detailed information about each venue
+- Check venue availability on a calendar
+- Request venue bookings for specific dates
+- Add additional services to their bookings
+- Contact the venue administrators
+
+## Technologies Used
+
+### Frontend
+- **React**: Core UI library
+- **TypeScript**: Type safety and better developer experience
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **React Router**: Page routing and navigation
+- **React DatePicker**: Calendar component for date selection
+- **Lucide React**: Icon library
+
+### Backend & Database
+- **Supabase**: Backend-as-a-Service providing:
+  - PostgreSQL database
+  - Authentication
+  - Row-level security
+  - API endpoints
+
+### Hosting
+- Deployed using Vercel or GitHub Pages
+
+## Data Architecture
+
+The application utilizes a relational database schema with the following tables:
+
+### Primary Tables
+- **venues**: Stores venue information (name, address, capacity, description, image)
+- **bookings**: Tracks booking requests with venue, date, and status
+- **services**: Available add-on services (catering, planning, photography)
+- **contact_messages**: Stores user inquiries and messages
+
+### Supporting Tables
+- **customers**: User information for booking tracking
+- **events**: Event information linked to venues
+- **event_services**: Junction table linking events and services
+- **venue_images**: Stores multiple images for each venue
+
+## Features
+
+### Venue Browsing
+- Grid layout of available venues with images
+- Filtering and sorting options
+
+### Venue Details
+- Detailed view of each venue with multiple images in a carousel
+- Capacity information and detailed descriptions
+- Interactive calendar showing available dates
+
+### Booking System
+- Date selection via an interactive calendar
+- Form for user information and special requests
+- Service selection for add-ons
+- Booking confirmation flow
+
+### Contact System
+- Contact form for general inquiries
+- Form validation and confirmation messaging
+
+## Technical Highlights
+
+### Responsive Design
+- Fully responsive layout that works on mobile, tablet, and desktop devices
+- Consistent user experience across all device sizes
+
+### State Management
+- Efficient React state management using hooks
+- Centralized data fetching from Supabase
+
+### Image Handling
+- Lazy-loaded images for performance
+- Smooth image carousel with autoplay and user controls
+
+### Form Handling
+- Validation for all user inputs
+- Graceful error handling and user feedback
+
+### Security
+- Row-level security implemented in Supabase
+- Data validation on both client and server
+
+## Project Requirements Addressed
+
+### Data Persistence
+- All venue data, booking requests, and contact messages are stored in Supabase PostgreSQL database
+- Read operations when browsing venues and checking availability
+- Write operations when submitting booking requests and contact forms
+
+### Concurrency Management
+- Database constraints prevent double-booking of venues on the same date
+- Optimistic UI updates with server validation
+
+### Security Implementation
+- Environment variables for Supabase credentials
+- Row-level security policies in database
+- Input validation to prevent injection attacks
+
+### Deployment & Availability
+- Deployed to a cloud hosting service
+- Supabase offers high availability and data redundancy
+
+## Future Enhancements
+
+- User authentication for saving favorite venues and tracking booking status
+- Admin dashboard for venue managers
+- Payment integration for booking deposits
+- Email notifications for booking confirmations
+- Advanced filtering and search functionality
+- Analytics dashboard for venue popularity and booking trends
+
+## Development
+
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
+
+### Installation
+1. Clone the repository
+```
+git clone https://github.com/yourusername/eternal-moments.git
+cd eternal-moments
+```
+
+2. Install dependencies
+```
+npm install
+```
+
+3. Set up environment variables
+Create a `.env` file in the root directory with your Supabase credentials:
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+4. Run the development server
+```
+npm run dev
+```
+
+5. Build for production
+```
+npm run build
+```
+
+## Project Structure
+```
+src/
+├── components/     # Reusable UI components
+├── lib/            # Utility functions and API clients
+├── pages/          # Page components
+├── services/       # API service functions
+├── types/          # TypeScript type definitions
+└── App.tsx         # Main application component
+```
+
+## Lessons Learned
+
+- The importance of proper database schema design
+- Techniques for handling image carousels and date pickers in React
+- Strategies for form validation and submission
+- Methods for implementing security with Supabase
+- Approaches to creating responsive designs with Tailwind CSS
+
+## Contributors
+- Your Name
+
+## License
+MIT
