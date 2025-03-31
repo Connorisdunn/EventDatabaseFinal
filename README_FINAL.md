@@ -3,6 +3,7 @@
 A modern, responsive web application for a wedding venue booking service that allows users to browse venues, check availability, request bookings, and contact venue administrators.
 
 For the sake of keeping this Github Repo open to public, I changed the .env file to keep my anon key private, but will include screenshots of entire supabase and website to provide functionality without need of running code. 
+
 VITE_SUPABASE_ANON_KEY= {ENTER ANON KEY}
 VITE_SUPABASE_URL= {ENTER URL}
 
@@ -36,8 +37,6 @@ Eternal Moments is a full-stack web application built with React, TypeScript, an
   - Row-level security
   - API endpoints
 
-### Hosting
-- Deployed using Vercel or GitHub Pages
 
 ## Data Architecture
 
@@ -110,7 +109,7 @@ The application utilizes a relational database schema with the following tables:
 - Optimistic UI updates with server validation
 
 ### Security Implementation
-- Environment variables for Supabase credentials
+- Environment variables for Supabase credentials, that only allows admin to access
 - Row-level security policies in database
 - Input validation to prevent injection attacks
 
@@ -120,47 +119,15 @@ The application utilizes a relational database schema with the following tables:
 
 ## Future Enhancements
 
-- User authentication for saving favorite venues and tracking booking status
+From my research of other wedding venue websites, or even event booking websites, I noticed it was a common theme to not have a personal account. However instead, just have a contact or book through email feature, that allows the admin to go in and respond individually to each request. This could be beneficial as far as keeping timestamps, and in order to make it most similar to other websites and be ready to deploy in the real world, I decided not to implement the account registration. This eliminates the need of several tables in the Supabase database. But if needed, I will keep these tables in Supabase for convenience.
+
+- User authentication for saving favorite venues,tracking booking status, and storing payment method.
 - Admin dashboard for venue managers
 - Payment integration for booking deposits
-- Email notifications for booking confirmations
+- User email notifications for booking confirmations
 - Advanced filtering and search functionality
 - Analytics dashboard for venue popularity and booking trends
 
-## Development
-
-### Prerequisites
-- Node.js (v18+)
-- npm or yarn
-
-### Installation
-1. Clone the repository
-```
-git clone https://github.com/yourusername/eternal-moments.git
-cd eternal-moments
-```
-
-2. Install dependencies
-```
-npm install
-```
-
-3. Set up environment variables
-Create a `.env` file in the root directory with your Supabase credentials:
-```
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-4. Run the development server
-```
-npm run dev
-```
-
-5. Build for production
-```
-npm run build
-```
 
 ## Project Structure
 ```
@@ -177,12 +144,13 @@ src/
 
 - The importance of proper database schema design
 - Techniques for handling image carousels and date pickers in React
-- Strategies for form validation and submission
+- Strategies for form validation and submission through Supabase API
 - Methods for implementing security with Supabase
 - Approaches to creating responsive designs with Tailwind CSS
 
-## Contributors
-- Your Name
+## Screenshots
 
-## License
-MIT
+
+
+## Contributor
+- Connor Dunn
