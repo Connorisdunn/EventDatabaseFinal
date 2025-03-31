@@ -150,31 +150,31 @@ src/
 
 ## Screenshots
 
-### Home Page
+#### Home Page
 
 
-### Footer
+#### Footer
 
 
-### Venues Page
+#### Venues Page
 
 
-### Venue View Details Page Part I
+#### Venue View Details Page Part I
 
 
-### Venue View Details Page Part II
+#### Venue View Details Page Part II
 
 
-### Services Page
+#### Services Page
 
 
-### Contact Us Page
+#### Contact Us Page
 
 
-### Supabase Database
+#### Supabase Database
 
 
-### Supabase Table Example
+#### Supabase Table Example
 
 
 
