@@ -157,7 +157,7 @@ src/
 <img width="500" alt="Screenshot 2025-03-31 at 11 15 40 AM" src="https://github.com/user-attachments/assets/36b8f8db-3aea-4fcd-a145-e2ec25eceba0" />
 
 #### Venues Page
-<img width="500" alt="Screenshot 2025-03-31 at 11 15 56 AM" src="https://github.com/user-attachments/assets/48c4fa00-1915-495e-b504-8a647033fe61" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 29 03 AM" src="https://github.com/user-attachments/assets/45e71e9d-ebef-4ecf-88bc-134f4ca00d54" />
 
 #### Venue View Details Page
 <img width="500" alt="Screenshot 2025-03-31 at 11 16 31 AM" src="https://github.com/user-attachments/assets/70e83297-5d44-4767-b7f6-99639b51d5d8" />
@@ -165,7 +165,7 @@ src/
 <img width="500" alt="Screenshot 2025-03-31 at 11 18 00 AM" src="https://github.com/user-attachments/assets/465a2441-dd90-4ddd-a48d-a7652ad258b3" />
 
 #### Services Page
-<img width="500" alt="Screenshot 2025-03-31 at 11 18 26 AM" src="https://github.com/user-attachments/assets/abbd947a-57ca-4df8-8c2e-039a16767669" />
+<img width="500" alt="Screenshot 2025-03-31 at 11 29 42 AM" src="https://github.com/user-attachments/assets/f2add0a1-7f01-4d9c-9d60-97657475bc08" />
 <img width="500" alt="Screenshot 2025-03-31 at 11 18 40 AM" src="https://github.com/user-attachments/assets/f14cd810-85e3-482a-9564-b55f15668414" />
 
 #### Contact Us Page
