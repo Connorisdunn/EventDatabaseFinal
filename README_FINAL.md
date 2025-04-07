@@ -122,7 +122,7 @@ The application utilizes a relational database schema with the following tables:
 From my research of other wedding venue websites, or even just event booking websites, I noticed it was a common theme to not have a personal account. However, instead just have a contact or book through email feature, this allows the admin to go in and respond individually to each request. This could be beneficial as far as keeping timestamps, create a personal touch with the user, and in order to make it most similar to other websites and be ready to deploy in the real world, so I decided not to implement the account registration yet. This in turn eliminates the need of several tables in the Supabase database. But if needed, I will keep these tables in Supabase for convenience. For this reason I have the contact_messages table accepting both booking requests and contact us messages. This still allows the admin to go in and update the bookings manually, ideally down the road if this becomes too overwhelming, making a create account will automatically do this for us.
 
 Other possible changes could be:
-- User authentication for saving favorite venues,tracking booking status, and storing payment method.
+- User authentication for saving favorite venues, tracking booking status, and storing payment method.
 - Admin dashboard for venue managers
 - Payment integration for booking deposits
 - User email notifications for booking confirmations
