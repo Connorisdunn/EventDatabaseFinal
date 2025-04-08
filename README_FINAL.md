@@ -183,5 +183,9 @@ src/
 <img width="500" alt="Screenshot 2025-03-31 at 11 23 48 AM" src="https://github.com/user-attachments/assets/c1180ae9-d2f9-4a8b-bafc-76ca12196e87" />
 <img width="500" alt="Screenshot 2025-03-31 at 11 24 25 AM" src="https://github.com/user-attachments/assets/8bfc9e2b-b346-4857-be60-144600cefcd5" />
 
+### Video Walk-Through
+[Screen Recording 2025-04-07 at 10.46.21 PM copy.mov.zip](https://github.com/user-attachments/files/19642704/Screen.Recording.2025-04-07.at.10.46.21.PM.copy.mov.zip)
+
+
 ## Contributor
 - Connor Dunn
